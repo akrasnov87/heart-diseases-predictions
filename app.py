@@ -32,4 +32,8 @@ is_active = st.checkbox('Ведёте ли Вы активный образ жи
 cls = load('heart.model')
 prediction = cls.predict_proba([[age, genre, height, weight, ap_hi, ap_lo, int(cholesterol), int(gluc), is_smoke, is_alco, is_active]])[:, 1]
 
+st.text('Данное предсказание не является диагнозом и носит лишь информационный характер.')
+
+st.write('**Рекомендация**: откажитесь от вредных привычек и ведите активный образ жизни - риск ССЗ будет ниже.')
+
 st.write(prediction)
